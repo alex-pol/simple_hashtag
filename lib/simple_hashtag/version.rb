@@ -1,3 +1,3 @@
 module SimpleHashtag
-  VERSION = "0.1.9.3"
+  VERSION = "0.1.9.31"
 end
