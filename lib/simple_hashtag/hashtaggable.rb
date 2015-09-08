@@ -29,7 +29,6 @@ module SimpleHashtag
 
       def scan_for_hashtags(content)
         match = content.scan(Hashtag::HASHTAG_REGEX)
-        match.downcase!
         match.uniq!
         match
       end
