@@ -21,7 +21,7 @@ module SimpleHashtag
 
 
     def name=(val)
-      write_attribute(:name, val.downcase)
+      write_attribute(:name, val.mb_chars.downcase.to_s)
     end
 
     def name
@@ -49,7 +49,7 @@ module SimpleHashtag
       hashtagged_ids_by_types[type]
     end
 
-    def to_s
+    def to_st_r
       name
     end
 
