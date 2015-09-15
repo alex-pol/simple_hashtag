@@ -13,7 +13,7 @@ module SimpleHashtag
     # HASHTAG_REGEX = /^(?:\p{Cyrillic}+|\p{Latin}+)$/i
 
     def self.find_by_name(name)
-      Hashtag.where("lower(name) =?", name.downcase).first
+      Hashtag.where("lower(name) =?", name.mb_chars.downcase.to_s).first
     end
     def self.find_or_create_by_name(name, &block)
       find_by_name(name) || create(name: name, &block)
@@ -25,7 +25,7 @@ module SimpleHashtag
     end
 
     def name
-      read_attribute(:name).downcase
+      read_attribute(:name).mb_chars.downcase.to_s
     end
 
     def hashtaggables
