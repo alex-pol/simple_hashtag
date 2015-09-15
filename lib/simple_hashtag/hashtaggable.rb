@@ -11,7 +11,7 @@ module SimpleHashtag
       def hashtaggable_content
         self.class.hashtaggable_attribute # to ensure it has been called at least once
         content = self.send(self.class.hashtaggable_attribute_name)
-        content.to_s
+        content.to_st_r
       end
 
       def update_hashtags
