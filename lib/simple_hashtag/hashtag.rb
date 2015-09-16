@@ -49,7 +49,7 @@ module SimpleHashtag
       hashtagged_ids_by_types[type]
     end
 
-    def to_st_r
+    def to_s
       name
     end
 
