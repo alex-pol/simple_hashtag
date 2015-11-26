@@ -9,7 +9,7 @@ module SimpleHashtag
     # TODO Beef up the regex (ie.:what if content is HTML)
     # this is how Twitter does it:
     # https://github.com/twitter/twitter-text-rb/blob/master/lib/twitter-text/regex.rb
-    HASHTAG_REGEX = /(?:\s|^)(#(?!(?:\d+|[\wа-я]+?_|_[\wа-я]+?)(?:\s|$))([a-z0-9а-я\-_]+))/i
+    HASHTAG_REGEX = /(#(?!(?:\d+|[\wа-я]+?_|_[\wа-я]+?)(?:\s|$))([a-z0-9а-я\-_]+))/i
     # HASHTAG_REGEX = /^(?:\p{Cyrillic}+|\p{Latin}+)$/i
 
     def self.find_by_name(name)
